@@ -2,6 +2,9 @@
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
+// CSS Import
+import './main.css'
+
 // React Page Imports
 import App from "./App.tsx";
 import MainPage from "./pages/MainPage.tsx";
