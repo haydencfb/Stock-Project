@@ -1,12 +1,9 @@
-/* Nav Component CSS */
-.nav {
-    background-color: blue;
+html, body, main, #root {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
 }
 
-/* StockCard Component CSS */
-.stockCard {
-    display: flex;
-    border: 2px solid black;
-    width: 100px;
-    height: 100px;
+body {
+    margin-top: 75px;
 }
