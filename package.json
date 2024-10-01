@@ -1,0 +1,45 @@
+{
+  "name": "2024-09-p2-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run client:build && npm run server",
+    "start:dev": "concurrently \"npm run server:dev\" \"wait-on tcp:3001 && npm run client:dev\"",
+    "server": "cd server && npm start",
+    "server:dev": "cd server && npm run dev",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "client:build": "cd client && npm run build",
+    "client:dev": "cd client && npm run dev",
+    "build": "cd server && npm run build",
+    "seed": "cd server && npm run seed",
+    "render-build": "npm install && npm run build",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "client/src/**/*.{ts,jsx}": [
+      "cd client && eslint --fix",
+      "prettier --write"
+    ],
+    "server/**/*.{js,jsx}": [
+      "cd server && eslint --fix",
+      "prettier --write"
+    ],
+    "**/*": "prettier --write --ignore-unknown"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.0.1",
+    "eslint": "^9.11.1",
+    "eslint-config-prettier": "^9.1.0",
+    "globals": "^15.9.0",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
+    "nodemon": "^3.1.7",
+    "prettier": "3.3.3",
+    "wait-on": "^8.0.1"
+  }
+}
