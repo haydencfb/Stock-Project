@@ -1,10 +1,15 @@
+// React Hook Imports
+
+// MUI Material Imports
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import Grid from "@mui/material/Grid2";
 import Box from "@mui/material/Box";
 import Typography from '@mui/material/Typography';
 
-const LoginCard = () => {
+// CSS Imports
+
+const SignUpCard = () => {
     return (
         <>
             <Box 
@@ -25,14 +30,12 @@ const LoginCard = () => {
                     <TextField fullWidth label="Password" style={{ width: 500 }}></TextField>
                 </Grid>
 
-                <Grid size={6} display='flex' justifyContent='end' alignItems='center'>
-                    <Typography>
-                        Have you signed up yet?
-                    </Typography>
+                <Grid size={12} display='flex' justifyContent='center'>
+                    <TextField fullWidth label="Confirm Password" style={{ width: 500 }}></TextField>
                 </Grid>
 
-                <Grid size={6} display='flex' justifyContent='start' alignItems='center'>
-                    <Button>Sign Up Now!</Button>
+                <Grid size={12} display='flex' justifyContent='center' alignItems='center'>
+                    <Button>Create Account</Button>
                 </Grid>
             </Grid>
             </Box>
@@ -40,4 +43,4 @@ const LoginCard = () => {
     )
 }
 
-export default LoginCard;
+export default SignUpCard;

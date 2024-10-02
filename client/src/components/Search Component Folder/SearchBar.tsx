@@ -1,4 +1,4 @@
-// React Imports
+// React Hook Imports
 import * as React from 'react';
 
 // MUI Material Imports
@@ -6,6 +6,8 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid2';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+
+// CSS Imports
 
 const SearchBar = () => {
 

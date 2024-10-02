@@ -1,5 +1,5 @@
 import Dashboard from "../components/Dashboard";
-import Footer from "../components/Footer";
+import Footer from "../components/Footer Component Folder/Footer";
 
 const Dashboard = () => {
   return (

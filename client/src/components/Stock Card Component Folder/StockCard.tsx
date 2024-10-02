@@ -1,3 +1,6 @@
+// React Hook Imports
+
+// MUI Material Imports
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -7,6 +10,8 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Grid from '@mui/material/Grid2';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+
+// CSS Imports
 
 const StockCard = () => {
 
