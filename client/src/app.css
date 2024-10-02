@@ -13,6 +13,6 @@ html, body, main, #root {
 }
 
 body {
-    margin-top: 100px;
+    margin-top: 110px;
     background-color: var(--primary-white);
 }

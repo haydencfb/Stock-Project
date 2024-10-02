@@ -1,6 +1,12 @@
+import LoginCard from "../../components/Login Folder/LoginCard";
+import SignUpCard from "../../components/Sign Up Folder/SignUp";
+
 const LandingPage = () => {
     return (
-        <h1>This is the Landing Page</h1>
+        <>
+            <LoginCard />
+            <SignUpCard />
+        </>
     )
 }
 
