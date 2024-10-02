@@ -174,6 +174,9 @@ const Nav = () => {
                 <>
                     <Grid 
                     size={4}
+                    display='flex'
+                    justifyContent='center'
+                    alignItems='center'
                     sx={{
                         textAlign: 'start',
                         padding: '15px 0px',
@@ -224,6 +227,9 @@ const Nav = () => {
 
                     <Grid 
                     size={4}
+                    display='flex'
+                    justifyContent='center'
+                    alignItems='center'
                     sx={{
                         textAlign: 'end',
                         padding: '15px 0px',
