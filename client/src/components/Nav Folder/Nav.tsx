@@ -8,7 +8,6 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid2';
-import IconButton from '@mui/material/IconButton';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import AppBar from '@mui/material/AppBar';
@@ -47,7 +46,7 @@ const Nav = () => {
         <> 
             {/* These will always be present, no matter page size */}
             <ThemeProvider theme={navTheme}>
-            <AppBar position="fixed" sx={{ backgroundColor: `black`, height: `75px` }} >
+            <AppBar position="fixed" sx={{ backgroundColor: `black`, height: `auto` }} >
             <Grid container direction="row" spacing={2} sx={{ display: 'flex' }}>
 
             {/* Mobile View */}
@@ -99,6 +98,7 @@ const Nav = () => {
                     <Grid size={8}>
                         <Typography 
                         sx={{
+                            fontSize: 'clamp(1rem, 1.28rem, 2rem)',
                             margin: '25px',
                             color: 'white',
                             textAlign: 'center'
@@ -108,25 +108,14 @@ const Nav = () => {
                         </Typography>
                     </Grid>
                 </>
+
             // Tablet View
             ) : isTablet ? (
                 <>
-                    <Grid size={8}>
-                        <Typography 
-                        sx={{
-                            margin: '25px',
-                            color: 'white',
-                            textAlign: 'center'
-                        }}
-                        >
-                            Stock Tracker
-                        </Typography>
-                    </Grid>
-
                     <Grid 
                     size={4}
                     sx={{
-                        textAlign: 'end',
+                        textAlign: 'start',
                         padding: '15px 0px',
                     }}
                     >
@@ -151,6 +140,12 @@ const Nav = () => {
                             'aria-labelledby': 'basic-button',
                             }}
                         >
+                            <MenuItem onClick={handleClose}>Log In</MenuItem>
+                            <MenuItem onClick={handleClose}>Sign Up</MenuItem>
+                            <MenuItem onClick={handleClose}>Account Settings</MenuItem>
+
+                            <Divider />
+
                             <MenuItem onClick={handleClose}>Currency 1</MenuItem>
                             <MenuItem onClick={handleClose}>Currency 2</MenuItem>
                             <MenuItem onClick={handleClose}>Currency 3</MenuItem>
@@ -158,6 +153,19 @@ const Nav = () => {
                             <MenuItem onClick={handleClose}>Currency 5</MenuItem>
                         </Menu>
 
+                    </Grid>
+
+                    <Grid size={8}>
+                        <Typography 
+                        sx={{
+                            fontSize: 'clamp(1rem, 1.28rem, 2rem)',
+                            margin: '25px',
+                            color: 'white',
+                            textAlign: 'center'
+                        }}
+                        >
+                            Stock Tracker
+                        </Typography>
                     </Grid>
                 </>
             
@@ -173,14 +181,13 @@ const Nav = () => {
                     >
                         <Button
                             id="basic-button"
-                            // variant="contained"
+                            variant="outlined"
+                            color="success"
+                            size='large'
                             aria-controls={open ? 'basic-menu' : undefined}
                             aria-haspopup="true"
                             aria-expanded={open ? 'true' : undefined}
                             onClick={handleClick}
-                            sx={{
-                                color: 'green',
-                            }}
                         >
                             Currency Selection
                         </Button>
@@ -205,7 +212,8 @@ const Nav = () => {
                     <Grid size={4}>
                         <Typography 
                         sx={{
-                            margin: '25px',
+                            fontSize: 'clamp(2rem, 2.5vw, 3.5rem)',
+                            margin: '15px',
                             color: 'white',
                             textAlign: 'center'
                         }}
@@ -223,6 +231,7 @@ const Nav = () => {
                     >
                         <Button
                             id="basic-button"
+                            className={`${classes.button}`}
                             aria-controls={open ? 'basic-menu' : undefined}
                             aria-haspopup="true"
                             aria-expanded={open ? 'true' : undefined}
@@ -243,7 +252,6 @@ const Nav = () => {
                             }}
                         >
                             <MenuItem onClick={handleClose}>Currency 1</MenuItem>
-
                         </Menu>
 
                     </Grid>

@@ -1,4 +1,4 @@
-import StockCard from "../components/StockCard";
+import StockCard from "../../components/Stock Card Folder/StockCard";
 
 const MainPage = () => {
     return (
