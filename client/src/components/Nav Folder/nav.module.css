@@ -1,3 +1,7 @@
 .button:hover {
     color: red;
 }
+
+.currency {
+    background-color: hsla(108, 100%, 50%, 0.5);
+}

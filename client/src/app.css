@@ -7,3 +7,11 @@ html, body, main, #root {
 body {
     margin-top: 100px;
 }
+
+:root {
+    --primary-black: #000000;
+    --primary-grey: #6D696A;
+    --primary-white: #EAEAEA;
+    --primary-green: #26A96C;
+    --primary-red: #F24333;
+}
