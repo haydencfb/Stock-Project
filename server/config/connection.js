@@ -1,6 +1,9 @@
 import Seqeulize from "sequelize";
 import "dotenv/config";
 
+
+const rapidApiKey = process.env.REACT_APP_RAPIDAPI_KEY;
+
 const sequelize =
   process.env.NODE_ENV === "production"
     ? new Seqeulize(process.env.DATABASE_URL)
@@ -11,7 +14,12 @@ const sequelize =
         {
           host: "localhost",
           dialect: "postgres",
+          dialectOptions: {
+            apiKey: rapidApiKey,
+          },
         },
       );
 
 export default sequelize;
+
+
