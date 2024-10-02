@@ -12,9 +12,30 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import AppBar from '@mui/material/AppBar';
 import { Button } from '@mui/material';
+import TextField from '@mui/material/TextField';
+import Box from '@mui/material/Box';
 
 // MUI Icon Imports
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+
+const currencies = [
+        {
+        value: 'USD',
+        label: '$',
+        },
+        {
+        value: 'EUR',
+        label: '€',
+        },
+        {
+        value: 'BTC',
+        label: '฿',
+        },
+        {
+        value: 'JPY',
+        label: '¥',
+        },
+    ];
 
 const Nav = () => {
 
@@ -46,7 +67,7 @@ const Nav = () => {
         <> 
             {/* These will always be present, no matter page size */}
             <ThemeProvider theme={navTheme}>
-            <AppBar position="fixed" sx={{ backgroundColor: `black`, height: `auto` }} >
+            <AppBar position="fixed" sx={{ backgroundColor: `var(--primary-grey)`, height: `auto` }} >
             <Grid container direction="row" spacing={2} sx={{ display: 'flex' }}>
 
             {/* Mobile View */}
@@ -66,7 +87,7 @@ const Nav = () => {
                             aria-expanded={open ? 'true' : undefined}
                             onClick={handleClick}
                             sx={{
-                                color: 'green',
+                                color: 'var(--primary-white)',
                             }}
                         >
                             <AccountCircleIcon fontSize='large' />
@@ -126,7 +147,7 @@ const Nav = () => {
                             aria-expanded={open ? 'true' : undefined}
                             onClick={handleClick}
                             sx={{
-                                color: 'green',
+                                color: 'var(--primary-white)',
                             }}
                         >
                             <AccountCircleIcon fontSize='large' />
@@ -182,43 +203,39 @@ const Nav = () => {
                         padding: '15px 0px',
                     }}
                     >
-                        <Button
-                            id="basic-button"
-                            variant="outlined"
-                            color="success"
-                            size='large'
-                            aria-controls={open ? 'basic-menu' : undefined}
-                            aria-haspopup="true"
-                            aria-expanded={open ? 'true' : undefined}
-                            onClick={handleClick}
+                        <Box
+                        component="form"
+                        sx={{ '& .MuiTextField-root': { m: 1, width: '25ch' } }}
+                        noValidate
+                        autoComplete="off"
                         >
-                            Currency Selection
-                        </Button>
-                        <Menu
-                            id="basic-menu"
-                            anchorEl={anchorEl}
-                            open={open}
-                            onClose={handleClose}
-                            MenuListProps={{
-                            'aria-labelledby': 'basic-button',
-                            }}
-                        >
-                            <MenuItem onClick={handleClose}>Currency 1</MenuItem>
-                            <MenuItem onClick={handleClose}>Currency 2</MenuItem>
-                            <MenuItem onClick={handleClose}>Currency 3</MenuItem>
-                            <MenuItem onClick={handleClose}>Currency 4</MenuItem>
-                            <MenuItem onClick={handleClose}>Currency 5</MenuItem>
-                        </Menu>
-
+                            <TextField
+                            id="filled-select-currency-native"
+                            select
+                            label="Select"
+                            defaultValue="EUR"
+                            // helperText="Please select your currency"
+                            variant='outlined'
+                            >
+                                {currencies.map((option) => (
+                                    <MenuItem key={option.value} value={option.value}>
+                                    {option.label}
+                                    </MenuItem>
+                                ))}
+                            </TextField>
+                        </Box>
                     </Grid>
 
-                    <Grid size={4}>
+                    <Grid 
+                    size={4} 
+                    display='flex'
+                    justifyContent='center'
+                    alignItems='center'>
                         <Typography 
                         sx={{
                             fontSize: 'clamp(2rem, 2.5vw, 3.5rem)',
                             margin: '15px',
                             color: 'white',
-                            textAlign: 'center'
                         }}
                         >
                             Stock Tracker
@@ -243,7 +260,7 @@ const Nav = () => {
                             aria-expanded={open ? 'true' : undefined}
                             onClick={handleClick}
                             sx={{
-                                color: 'green',
+                                color: 'var(--primary-white)',
                             }}
                         >
                             <AccountCircleIcon fontSize='large' />
