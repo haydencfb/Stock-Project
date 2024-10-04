@@ -20,16 +20,16 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <MainPage />
+        element: <LandingPage />
       }, 
+      {
+        path: '/MainPage',
+        element: <MainPage />
+      },
       {
         path: '/StockPage',
         element: <StockPage />
-      }, 
-      {
-        path: '/LandingPage',
-        element: <LandingPage />
-      }, 
+      },
     ]
   }
 ]);

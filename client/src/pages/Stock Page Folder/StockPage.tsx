@@ -16,8 +16,7 @@ const StockPage = () => {
           height: "100vh",
       }}
       >
-      <StockCard />
-      <StockCard />
+        <StockCard />
       </Box>
     </>
   );
