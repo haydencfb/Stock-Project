@@ -1,6 +1,6 @@
-// React Imports
+// React Hook Imports
 import * as React from 'react';
-import classes from '../Nav Folder/nav.module.css';
+import classes from './nav.module.css';
 
 // MUI Material Imports
 import Divider from '@mui/material/Divider';
@@ -12,9 +12,31 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import AppBar from '@mui/material/AppBar';
 import { Button } from '@mui/material';
+import TextField from '@mui/material/TextField';
+import Box from '@mui/material/Box';
 
 // MUI Icon Imports
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import ShowChartIcon from '@mui/icons-material/ShowChart';
+
+const currencies = [
+        {
+        value: 'USD',
+        label: '$',
+        },
+        {
+        value: 'EUR',
+        label: '€',
+        },
+        {
+        value: 'BTC',
+        label: '฿',
+        },
+        {
+        value: 'JPY',
+        label: '¥',
+        },
+    ];
 
 const Nav = () => {
 
@@ -46,7 +68,7 @@ const Nav = () => {
         <> 
             {/* These will always be present, no matter page size */}
             <ThemeProvider theme={navTheme}>
-            <AppBar position="fixed" sx={{ backgroundColor: `black`, height: `auto` }} >
+            <AppBar position="fixed" sx={{ backgroundColor: `var(--primary-grey)`, height: `auto` }} >
             <Grid container direction="row" spacing={2} sx={{ display: 'flex' }}>
 
             {/* Mobile View */}
@@ -54,6 +76,9 @@ const Nav = () => {
                 <>
                     <Grid 
                     size={4}
+                    display='flex'
+                    justifyContent='center'
+                    alignItems='center'
                     sx={{
                         textAlign: 'start',
                         padding: '15px 0px',
@@ -66,7 +91,7 @@ const Nav = () => {
                             aria-expanded={open ? 'true' : undefined}
                             onClick={handleClick}
                             sx={{
-                                color: 'green',
+                                color: 'var(--primary-white)',
                             }}
                         >
                             <AccountCircleIcon fontSize='large' />
@@ -95,7 +120,13 @@ const Nav = () => {
 
                     </Grid>
 
-                    <Grid size={8}>
+                    <Grid 
+                    size={8}
+                    display='flex'
+                    justifyContent='center'
+                    alignItems='center'
+                    >
+                        <ShowChartIcon fontSize='large' />
                         <Typography 
                         sx={{
                             fontSize: 'clamp(1rem, 1.28rem, 2rem)',
@@ -114,6 +145,9 @@ const Nav = () => {
                 <>
                     <Grid 
                     size={4}
+                    display='flex'
+                    justifyContent='center'
+                    alignItems='center'
                     sx={{
                         textAlign: 'start',
                         padding: '15px 0px',
@@ -126,7 +160,7 @@ const Nav = () => {
                             aria-expanded={open ? 'true' : undefined}
                             onClick={handleClick}
                             sx={{
-                                color: 'green',
+                                color: 'var(--primary-white)',
                             }}
                         >
                             <AccountCircleIcon fontSize='large' />
@@ -155,7 +189,13 @@ const Nav = () => {
 
                     </Grid>
 
-                    <Grid size={8}>
+                    <Grid 
+                    size={8}
+                    display='flex'
+                    justifyContent='center'
+                    alignItems='center'
+                    >
+                        <ShowChartIcon fontSize='large' />
                         <Typography 
                         sx={{
                             fontSize: 'clamp(1rem, 1.28rem, 2rem)',
@@ -173,61 +213,14 @@ const Nav = () => {
             ) : (
                 <>
                     <Grid 
-                    size={4}
-                    sx={{
-                        textAlign: 'start',
-                        padding: '15px 0px',
-                    }}
-                    >
-                        <Button
-                            id="basic-button"
-                            variant="outlined"
-                            color="success"
-                            size='large'
-                            aria-controls={open ? 'basic-menu' : undefined}
-                            aria-haspopup="true"
-                            aria-expanded={open ? 'true' : undefined}
-                            onClick={handleClick}
-                        >
-                            Currency Selection
-                        </Button>
-                        <Menu
-                            id="basic-menu"
-                            anchorEl={anchorEl}
-                            open={open}
-                            onClose={handleClose}
-                            MenuListProps={{
-                            'aria-labelledby': 'basic-button',
-                            }}
-                        >
-                            <MenuItem onClick={handleClose}>Currency 1</MenuItem>
-                            <MenuItem onClick={handleClose}>Currency 2</MenuItem>
-                            <MenuItem onClick={handleClose}>Currency 3</MenuItem>
-                            <MenuItem onClick={handleClose}>Currency 4</MenuItem>
-                            <MenuItem onClick={handleClose}>Currency 5</MenuItem>
-                        </Menu>
-
-                    </Grid>
-
-                    <Grid size={4}>
-                        <Typography 
+                        size={4}
+                        display='flex'
+                        justifyContent='center'
+                        alignItems='center'
                         sx={{
-                            fontSize: 'clamp(2rem, 2.5vw, 3.5rem)',
-                            margin: '15px',
-                            color: 'white',
-                            textAlign: 'center'
+                            textAlign: 'end',
+                            padding: '15px 0px',
                         }}
-                        >
-                            Stock Tracker
-                        </Typography>
-                    </Grid>
-
-                    <Grid 
-                    size={4}
-                    sx={{
-                        textAlign: 'end',
-                        padding: '15px 0px',
-                    }}
                     >
                         <Button
                             id="basic-button"
@@ -237,7 +230,7 @@ const Nav = () => {
                             aria-expanded={open ? 'true' : undefined}
                             onClick={handleClick}
                             sx={{
-                                color: 'green',
+                                color: 'var(--primary-white)',
                             }}
                         >
                             <AccountCircleIcon fontSize='large' />
@@ -254,6 +247,56 @@ const Nav = () => {
                             <MenuItem onClick={handleClose}>Currency 1</MenuItem>
                         </Menu>
 
+                    </Grid>
+            
+                    <Grid 
+                    size={4} 
+                    display='flex'
+                    justifyContent='center'
+                    alignItems='center'>
+                        <ShowChartIcon fontSize='large' />
+                        <Typography 
+                        sx={{
+                            fontSize: 'clamp(1.75rem, 2.5vw, 3.5rem)',
+                            margin: '15px',
+                            color: 'white',
+                        }}
+                        >
+                            Stock Tracker
+                        </Typography>
+                    </Grid>
+
+                    <Grid 
+                    size={4}
+                    display='flex'
+                    justifyContent='center'
+                    alignItems='center'
+                    sx={{
+                        textAlign: 'start',
+                        padding: '15px 0px',
+                    }}
+                    >
+                        <Box
+                        component="form"
+                        sx={{ '& .MuiTextField-root': { m: 1, width: '25ch' } }}
+                        noValidate
+                        autoComplete="off"
+                        >
+                            <TextField
+                            id="filled-select-currency-native"
+                            select
+                            label="Select"
+                            defaultValue="EUR"
+                            // helperText="Please select your currency"
+                            variant='outlined'
+                            >
+                                {currencies.map((option) => (
+                                    <MenuItem key={option.value} value={option.value}>
+                                    {option.label}
+                                    </MenuItem>
+                                ))}
+                            </TextField>
+                        </Box>
                     </Grid>
                 </>
             )}

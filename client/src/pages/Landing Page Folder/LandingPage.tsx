@@ -1,6 +1,19 @@
+// React Hook Imports
+
+// React Component Imports
+import LoginCard from "../../components/Login Component Folder/LoginCard";
+import SignUpCard from "../../components/Sign Up Component Folder/SignUp";
+
+// MUI Material Imports
+
+// CSS Imports
+
 const LandingPage = () => {
     return (
-        <h1>This is the Landing Page</h1>
+        <>
+            <LoginCard />
+            <SignUpCard />
+        </>
     )
 }
 

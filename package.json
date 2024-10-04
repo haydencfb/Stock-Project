@@ -43,5 +43,8 @@
     "nodemon": "^3.1.7",
     "prettier": "3.3.3",
     "wait-on": "^8.0.1"
+  },
+  "dependencies": {
+    "@mui/x-charts": "^7.18.0"
   }
 }

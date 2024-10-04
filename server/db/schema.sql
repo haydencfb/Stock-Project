@@ -1,5 +1,3 @@
-
-
 -- DELETES "uci_project2_group4" database --
 DROP DATABASE IF EXISTS uci_project2_group4;
 -- Creates "uci_project2_group4" database --

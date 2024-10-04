@@ -1,3 +1,6 @@
+// React Hook Imports
+
+// MUI Material Imports
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -5,19 +8,33 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+import Grid from '@mui/material/Grid2';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+
+// CSS Imports
 
 const StockCard = () => {
+
+    const stockCardTheme = createTheme({
+        breakpoints: { 
+            values: { 
+                xs: 0,
+                sm: 362,
+                md: 768,
+                lg: 1024,
+                xl: 1440
+            },
+        },
+    });
+
     return (
         <>
-            <Box
-            sx={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                height: "100vh",
-            }}
-            >
-            <Card sx={{ maxWidth: 345 }}>
+            <ThemeProvider theme={stockCardTheme}>
+            <Grid size={{ sm: 12, md: 12, lg: 12 }}>
+            <Card sx={{ 
+                maxWidth: 345,
+                margin: '15px'
+                }}>
                 <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
                     Stock Name
@@ -41,7 +58,8 @@ const StockCard = () => {
                 <Button size="small">Learn More</Button>
                 </CardActions>
             </Card>
-            </Box>
+            </Grid>
+            </ThemeProvider>
         </>
     )
 }
