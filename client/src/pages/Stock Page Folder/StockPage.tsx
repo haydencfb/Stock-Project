@@ -1,5 +1,5 @@
 // React Component Imports
-import StockCard from "../../components/Stock Card Folder/StockCard";
+import StockCard from "../../components/Stock Card Component Folder/StockCard";
 import Box from "@mui/material/Box";
 
 // React CSS Imports
