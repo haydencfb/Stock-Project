@@ -1,5 +1,7 @@
 {
   "name": "2024-09-p2-starter",
+  "type": "module",
+  "private": true,
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
