@@ -45,6 +45,7 @@
     "wait-on": "^8.0.1"
   },
   "dependencies": {
-    "@mui/x-charts": "^7.18.0"
+    "@mui/x-charts": "^7.18.0",
+    "chart.js": "^4.4.4"
   }
 }
