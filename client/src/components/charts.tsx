@@ -1,5 +1,7 @@
-<<<<<<< Updated upstream
 import { LineChart } from '@mui/x-charts/LineChart';
+
+// CSS Imports
+
 
 export default function ChartsOverviewDemo() {
 =======
@@ -51,7 +53,6 @@ const Charts: React.FC = () => {
     }
   };
 
->>>>>>> Stashed changes
   return (
     <div>
       <h1>Search for a Stock Symbol</h1>

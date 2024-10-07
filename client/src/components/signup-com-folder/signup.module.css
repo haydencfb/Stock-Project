@@ -1,0 +1,21 @@
+.signupDiv {
+    display: flex;
+    justify-content: center;
+}
+
+.signupBox {
+    /* Flex Styles */
+    display: flex;
+    justify-content: center;
+
+    /* Box Styles */
+    padding: 25px;
+    background-color: var(--primary-grey);
+    border-radius: 35px;
+    max-width: 75%;
+    filter: drop-shadow(0px 5px 5px var(--primary-grey))
+}
+
+.signupButton:hover {
+    background-color: green;
+}

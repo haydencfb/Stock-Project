@@ -1,0 +1,26 @@
+/* body, main, html, #root {
+    height: 500px;
+} */
+
+.loginDiv {
+    display: flex;
+    justify-content: center;
+    height: 500px;
+}
+
+.loginBox {
+    /* Flex Styles */
+    display: flex;
+    justify-content: center;
+
+    /* Box Styles */
+    padding: 50px;
+    background-color: var(--primary-grey);
+    border-radius: 35px;
+    max-width: 65%;
+    filter: drop-shadow(0px 5px 5px var(--primary-grey))
+}
+
+.loginButton:hover {
+    background-color: green;
+}

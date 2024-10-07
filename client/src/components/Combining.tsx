@@ -1,5 +1,10 @@
-import * as React from 'react';
+// React Hook Imports
+import { Link } from "react-router-dom";
+
+// MUI Material Imports
 import Typography from '@mui/material/Typography';
+
+// MUI Chart Imports
 import { BarPlot } from '@mui/x-charts/BarChart';
 import { LineHighlightPlot, LinePlot } from '@mui/x-charts/LineChart';
 import { ResponsiveChartContainer } from '@mui/x-charts/ResponsiveChartContainer';
@@ -9,6 +14,10 @@ import { ChartsYAxis } from '@mui/x-charts/ChartsYAxis';
 import { ChartsTooltip } from '@mui/x-charts/ChartsTooltip';
 import { ChartsAxisHighlight } from '@mui/x-charts/ChartsAxisHighlight';
 import { axisClasses } from '@mui/x-charts/ChartsAxis';
+
+// CSS Imports
+
+// Google Dataset Imports
 import alphabetStock from '../dataset/GOOGL.json';
 
 const series = [
