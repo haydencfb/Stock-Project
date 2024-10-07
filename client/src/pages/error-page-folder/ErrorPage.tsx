@@ -7,7 +7,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
 // CSS Imports
-import classes from '../Error Page Folder/error.module.css';
+import classes from './error.module.css';
 
 const ErrorPage = () => {
     return (

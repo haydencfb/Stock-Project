@@ -8,6 +8,7 @@ import Grid from '@mui/material/Grid2';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 // CSS Imports
+import classes from './searchbar.module.css';
 
 const SearchBar = () => {
 

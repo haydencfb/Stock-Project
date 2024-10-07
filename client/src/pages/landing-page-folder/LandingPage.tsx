@@ -1,8 +1,8 @@
 // React Hook Imports
 
 // React Component Imports
-import LoginCard from "../../components/Login Component Folder/LoginCard";
-import SignUpCard from "../../components/Sign Up Component Folder/SignUp";
+import LoginCard from "../../components/login-comp-folder/LoginCard";
+import SignUpCard from "../../components/signup-com-folder/SignUp";
 
 // MUI Material Imports
 import Box from "@mui/material/Box";

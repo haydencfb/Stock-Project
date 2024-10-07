@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 // CSS Imports
-import classes from '../Sign Up Component Folder/signup.module.css';
+import classes from './login.module.css';
 
 const colorTheme = createTheme({
     palette: {
@@ -25,15 +25,14 @@ const colorTheme = createTheme({
     }
 })
 
-const SignUpCard = () => {
+const LoginCard = () => {
     return (
         <>
             <ThemeProvider theme={colorTheme}>
-                <div className={`${classes.signupDiv}`}>
-                    <Box 
-                    className={`${classes.signupBox}`}
-                    >
+                <div className={`${classes.loginDiv}`}>
+                    <Box className={`${classes.loginBox}`}>
                         <Grid container spacing={2}>
+
                             <Grid size={12} display='flex' justifyContent='center'>
                                 <TextField fullWidth label="Username" style={{ width: 500 }}></TextField>
                             </Grid>
@@ -42,13 +41,15 @@ const SignUpCard = () => {
                                 <TextField fullWidth label="Password" style={{ width: 500 }}></TextField>
                             </Grid>
 
-                            <Grid size={12} display='flex' justifyContent='center'>
-                                <TextField fullWidth label="Confirm Password" style={{ width: 500 }}></TextField>
+                            <Grid size={12} display='flex' justifyContent='center' alignItems='center'>
+                                <Typography>Have you signed up yet?</Typography>
+                                <Button color="primary">Sign Up Now!</Button>
                             </Grid>
 
                             <Grid size={12} display='flex' justifyContent='center' alignItems='center'>
-                                <Button variant='contained' color='primary' className={`${classes.signupButton}`}>Create Account</Button>
+                                <Button variant='contained' className={`${classes.loginButton}`}>Sign In</Button>
                             </Grid>
+
                         </Grid>
                     </Box>
                 </div>
@@ -57,4 +58,4 @@ const SignUpCard = () => {
     )
 }
 
-export default SignUpCard;
+export default LoginCard;
