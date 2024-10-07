@@ -1,28 +1,36 @@
-import axios from 'axios';
-import dotenv from 'dotenv';
+const fs = require('fs');
+const path = require('path');
+const Sequelize = require('sequelize');
+const config = require(__dirname + '/../config/config.json')[env];
+const model = require(path.join(__dirname, file))(sequelize, Sequelize.DataTypes);
 
-dotenv.config();
+const basename = path.basename(__filename);
+const env = process.env.NODE_ENV || 'development';
+const db = {};
 
-const options = {
-  method: 'GET',
-  url: 'https://yh-finance.p.rapidapi.com/market/v2/get-charts',
-  params: { region: 'US', symbols: 'AAPL' },
-  headers: {
-    'X-RapidAPI-Key': process.env.RAPIDAPI_KEY,
-    'X-RapidAPI-Host': 'yh-finance.p.rapidapi.com'
-  }
-};
-
-async function fetchStockData() {
-  try {
-    const response = await axios.request(options);
-    console.log(response.data);
-  } catch (error) {
-    console.error('Error fetching data:', error);
-  }
+let sequelize;
+if (config.use_env_variable) {
+  sequelize = new Sequelize(process.env[config.use_env_variable], config);
+} else {
+  sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
 
+fs
+  .readdirSync(__dirname)
+  .filter(file => {
+    return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
+  })
+  .forEach(file => {
+    db[model.name] = model;
+  });
 
-console.log('RAPIDAPI_KEY:', process.env.RAPIDAPI_KEY);
+Object.keys(db).forEach(modelName => {
+  if (db[modelName].associate) {
+    db[modelName].associate(db);
+  }
+});
 
-fetchStockData();
+db.sequelize = sequelize;
+db.Sequelize = Sequelize;
+
+module.exports = db;
