@@ -1,5 +1,5 @@
 // React Component Imports
-import StockCard from "../../components/Stock Card Component Folder/StockCard";
+import StockCard from "../../components/card-comp-folder/StockCard";
 import Box from "@mui/material/Box";
 
 // React CSS Imports
@@ -16,8 +16,7 @@ const StockPage = () => {
           height: "100vh",
       }}
       >
-      <StockCard />
-      <StockCard />
+        <StockCard />
       </Box>
     </>
   );

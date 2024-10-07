@@ -22,19 +22,19 @@ import ShowChartIcon from '@mui/icons-material/ShowChart';
 const currencies = [
         {
         value: 'USD',
-        label: '$',
+        label: '$ (USD)',
         },
         {
         value: 'EUR',
-        label: '€',
+        label: '€ (EUR)',
         },
         {
         value: 'BTC',
-        label: '฿',
+        label: '฿ (BTC)',
         },
         {
         value: 'JPY',
-        label: '¥',
+        label: '¥ (JPY)',
         },
     ];
 
@@ -44,6 +44,21 @@ const Nav = () => {
     const isTablet = useMediaQuery(`(max-width: 768px)`)
 
     const navTheme = createTheme({
+        palette: {
+            primary: {
+                main: '#000000'
+            },
+            secondary: {
+                main: '#6D696A'
+            },
+            success: {
+                main: '#26A96C'
+            }, 
+            info: {
+                main: '#EAEAEA'
+            }
+        },
+
         breakpoints: { 
             values: { 
                 xs: 0,
@@ -68,7 +83,7 @@ const Nav = () => {
         <> 
             {/* These will always be present, no matter page size */}
             <ThemeProvider theme={navTheme}>
-            <AppBar position="fixed" sx={{ backgroundColor: `var(--primary-grey)`, height: `auto` }} >
+            <AppBar position="fixed" sx={{ backgroundColor: `var(--primary-grey)`, height: `auto`, filter: 'drop-shadow(0px 5px 5px var(--primary-grey))' }} >
             <Grid container direction="row" spacing={2} sx={{ display: 'flex' }}>
 
             {/* Mobile View */}
@@ -105,17 +120,15 @@ const Nav = () => {
                             'aria-labelledby': 'basic-button',
                             }}
                         >
-                            <MenuItem onClick={handleClose}>Log In</MenuItem>
-                            <MenuItem onClick={handleClose}>Sign Up</MenuItem>
-                            <MenuItem onClick={handleClose}>Account Settings</MenuItem>
+                            <MenuItem onClick={handleClose}>Log Out</MenuItem>
 
                             <Divider />
 
-                            <MenuItem onClick={handleClose}>Currency 1</MenuItem>
-                            <MenuItem onClick={handleClose}>Currency 2</MenuItem>
-                            <MenuItem onClick={handleClose}>Currency 3</MenuItem>
-                            <MenuItem onClick={handleClose}>Currency 4</MenuItem>
-                            <MenuItem onClick={handleClose}>Currency 5</MenuItem>
+                            {currencies.map((option) => (
+                                <MenuItem key={option.value} value={option.value}>
+                                {option.label}
+                                </MenuItem>
+                            ))}
                         </Menu>
 
                     </Grid>
@@ -174,17 +187,16 @@ const Nav = () => {
                             'aria-labelledby': 'basic-button',
                             }}
                         >
-                            <MenuItem onClick={handleClose}>Log In</MenuItem>
-                            <MenuItem onClick={handleClose}>Sign Up</MenuItem>
-                            <MenuItem onClick={handleClose}>Account Settings</MenuItem>
+
+                            <MenuItem onClick={handleClose}>Log Out</MenuItem>
 
                             <Divider />
 
-                            <MenuItem onClick={handleClose}>Currency 1</MenuItem>
-                            <MenuItem onClick={handleClose}>Currency 2</MenuItem>
-                            <MenuItem onClick={handleClose}>Currency 3</MenuItem>
-                            <MenuItem onClick={handleClose}>Currency 4</MenuItem>
-                            <MenuItem onClick={handleClose}>Currency 5</MenuItem>
+                            {currencies.map((option) => (
+                                <MenuItem key={option.value} value={option.value}>
+                                {option.label}
+                                </MenuItem>
+                            ))}
                         </Menu>
 
                     </Grid>
@@ -244,7 +256,7 @@ const Nav = () => {
                             'aria-labelledby': 'basic-button',
                             }}
                         >
-                            <MenuItem onClick={handleClose}>Currency 1</MenuItem>
+                            <MenuItem onClick={handleClose}>Logout</MenuItem>
                         </Menu>
 
                     </Grid>
@@ -287,8 +299,9 @@ const Nav = () => {
                             select
                             label="Select"
                             defaultValue="EUR"
-                            // helperText="Please select your currency"
                             variant='outlined'
+                            color='info'
+                            // focused
                             >
                                 {currencies.map((option) => (
                                     <MenuItem key={option.value} value={option.value}>
