@@ -1,10 +1,3 @@
-import { LineChart } from '@mui/x-charts/LineChart';
-
-// CSS Imports
-
-
-export default function ChartsOverviewDemo() {
-=======
 import React, { useState } from 'react';
 import { Chart } from 'chart.js/auto';
 
@@ -19,6 +12,8 @@ const Charts: React.FC = () => {
       const response = await fetch(`http://localhost:3000/api/stock/${symbol}`);
       const stockData = await response.json();
       const stockPrice = stockData.price.regularMarketPrice.raw;
+
+      console.log(stockData);
 
       const ctx = (document.getElementById('stockChart') as HTMLCanvasElement).getContext('2d');
 
