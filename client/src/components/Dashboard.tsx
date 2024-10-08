@@ -12,6 +12,7 @@ const DashboardPage = () => {
                 </Card>
             </Grid2>
             <Grid2 size={{ xs: 12, md: 6 }} >
+
                 <Card>
                     <CardContent>
                         <Charts />
