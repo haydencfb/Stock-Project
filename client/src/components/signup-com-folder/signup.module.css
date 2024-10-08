@@ -18,5 +18,5 @@
 }
 
 .signupButton:hover {
-    background-color: green;
+    background-color: var(--primary-green);
 }

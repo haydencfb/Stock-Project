@@ -144,7 +144,7 @@ const Nav = () => {
                         sx={{
                             fontSize: 'clamp(1rem, 1.28rem, 2rem)',
                             margin: '25px',
-                            color: 'white',
+                            color: 'var(--primary-white)',
                             textAlign: 'center'
                         }}
                         >
@@ -212,7 +212,7 @@ const Nav = () => {
                         sx={{
                             fontSize: 'clamp(1rem, 1.28rem, 2rem)',
                             margin: '25px',
-                            color: 'white',
+                            color: 'var(--primary-white)',
                             textAlign: 'center'
                         }}
                         >
@@ -271,7 +271,7 @@ const Nav = () => {
                         sx={{
                             fontSize: 'clamp(1.75rem, 2.5vw, 3.5rem)',
                             margin: '15px',
-                            color: 'white',
+                            color: 'var(--primary-white)',
                         }}
                         >
                             Stock Tracker

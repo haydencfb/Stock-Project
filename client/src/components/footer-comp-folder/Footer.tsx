@@ -21,9 +21,16 @@ export default function Footer() {
   return (
     <footer>
     <Box sx={{ height: "50px", width: '100%', marginTop: "auto" }}>
-      <BottomNavigation sx={{ height: "50px", width: '100%', backgroundColor: 'var(--primary-grey)' }} showLabels value={value} onChange={(event, newValue) => {setValue(newValue)}}>
-        <BottomNavigationAction label="Repository" icon={<GitHubIcon />} />
-        <BottomNavigationAction label="Powerpoint" icon={<SlideshowIcon />} /> 
+      <BottomNavigation sx={{ height: "50px", width: '100%', backgroundColor: 'var(--primary-grey)', display: 'flex', justifyContent: 'space-evenly' }} showLabels value={value} onChange={(event, newValue) => {setValue(newValue)}}>
+
+        <Link to="https://github.com/haydencfb/Stock-Project" className={`${classes.footerLink}`}>
+          <GitHubIcon fontSize="large" />
+        </Link>
+
+        <Link to="https://github.com/haydencfb/Stock-Project" className={`${classes.footerLink}`}>
+          <SlideshowIcon fontSize="large" />
+        </Link>
+        
       </BottomNavigation>
     </Box>
     </footer>

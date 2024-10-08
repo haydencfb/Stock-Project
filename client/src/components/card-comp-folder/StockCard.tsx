@@ -10,6 +10,9 @@ import Typography from "@mui/material/Typography";
 import Grid from '@mui/material/Grid2';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
+// Components
+import Charts from '../charts';
+
 // CSS Imports
 import classes from './stockcard.module.css';
 
@@ -63,13 +66,7 @@ const StockCard = () => {
                             <Typography gutterBottom variant="h5" component="div">
                                 Stock Name
                             </Typography>
-                            <CardMedia
-                                component="img"
-                                height="140px"
-                                image="https://placedog.net/500"
-                                alt="random"
-                                sx={{ mb: 2 }}
-                            />
+                            <Charts />
                             <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
                                 Stock Value
                             </Typography>
@@ -83,9 +80,9 @@ const StockCard = () => {
                             display: 'flex',
                             flexDirection: 'column',
                             justifyContent: 'center',
-                            alignItems: 'center'
+                            alignItems: 'center',
                         }}>
-                            <Button size="small">Learn More</Button>
+                            <Button className={`${classes.cardActions}`} size="small">Learn More</Button>
                         </CardActions>
 
                     </Card>
