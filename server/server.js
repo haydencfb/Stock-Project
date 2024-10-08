@@ -1,7 +1,7 @@
 import express from "express";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import sequelize from "./config/connection.js";
+import sequelize from "./src/config/connection.js";
 import axios from "axios";
 import "dotenv/config";
 
