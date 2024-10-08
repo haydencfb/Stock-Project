@@ -1,5 +1,5 @@
 // React Hook Imports
-import * as React from 'react';
+// import * as React from 'react';
 
 // MUI Material Imports
 import Box from '@mui/material/Box';
@@ -8,7 +8,7 @@ import Grid from '@mui/material/Grid2';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 // CSS Imports
-import classes from './searchbar.module.css';
+// import classes from './searchbar.module.css';
 
 const SearchBar = () => {
 

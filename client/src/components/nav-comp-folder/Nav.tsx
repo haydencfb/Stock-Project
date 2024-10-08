@@ -20,8 +20,8 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
 
 import { useState, useEffect, useLayoutEffect } from "react";
-import { retrieveUsers } from "../../api/userAPI";
-import type { UserData } from "../../interfaces/UserData";
+// import { retrieveUsers } from "../../api/userAPI";
+// import type { UserData } from "../../interfaces/UserData";
 import auth from '../../utils/auth';
 
 
@@ -46,13 +46,12 @@ const currencies = [
 
 const Nav = () => {
 
-    const [users, setUsers] = useState<UserData[]>([]);
-    const [error, setError] = useState(false);
+    // const [users, setUsers] = useState<UserData[]>([]);
     const [loginCheck, setLoginCheck] = useState(false);
 
     useEffect(() => {
         if (loginCheck) {
-            fetchUsers();
+            // fetchUsers();
         }
     }, [loginCheck]);
 
@@ -66,15 +65,14 @@ const Nav = () => {
         }
     };
 
-    const fetchUsers = async () => {
-        try {
-            const data = await retrieveUsers();
-            setUsers(data)
-        } catch (err) {
-            console.error('Failed to retrieve tickets:', err);
-            setError(true);
-        }
-    }
+    // const fetchUsers = async () => {
+    //     try {
+    //         const data = await retrieveUsers();
+    //         setUsers(data)
+    //     } catch (err) {
+    //         console.error('Failed to retrieve tickets:', err);
+    //     }
+    // }
 
     const isMobile = useMediaQuery(`(max-width: 426px)`)
     const isTablet = useMediaQuery(`(max-width: 768px)`)
@@ -158,7 +156,7 @@ const Nav = () => {
                         >
                             {!loginCheck ? (
                                 <>
-                                    <MenuItem onClick={handleClose}>Log In</MenuItem>
+                                    <MenuItem onClick={handleClose}></MenuItem>
                                 </>
                             ) : (
                                 <>
