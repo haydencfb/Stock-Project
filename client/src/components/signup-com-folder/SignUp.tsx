@@ -30,25 +30,25 @@ const SignUpCard = () => {
         <>
             <ThemeProvider theme={colorTheme}>
                 <div className={`${classes.signupDiv}`}>
-                    <Box 
-                    className={`${classes.signupBox}`}
-                    >
+                    <Box className={`${classes.signupBox}`}>
                         <Grid container spacing={2}>
+
                             <Grid size={12} display='flex' justifyContent='center'>
-                                <TextField fullWidth label="Username" style={{ width: 500 }}></TextField>
+                                <TextField fullWidth label="Username" style={{ maxWidth: 500 }}></TextField>
                             </Grid>
 
                             <Grid size={12} display='flex' justifyContent='center'>
-                                <TextField fullWidth label="Password" style={{ width: 500 }}></TextField>
+                                <TextField fullWidth label="Password" style={{ maxWidth: 500 }}></TextField>
                             </Grid>
 
                             <Grid size={12} display='flex' justifyContent='center'>
-                                <TextField fullWidth label="Confirm Password" style={{ width: 500 }}></TextField>
+                                <TextField fullWidth label="Confirm Password" style={{ maxWidth: 500 }}></TextField>
                             </Grid>
 
                             <Grid size={12} display='flex' justifyContent='center' alignItems='center'>
                                 <Button variant='contained' color='primary' className={`${classes.signupButton}`}>Create Account</Button>
                             </Grid>
+
                         </Grid>
                     </Box>
                 </div>

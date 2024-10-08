@@ -10,7 +10,8 @@ import App from "./App.tsx";
 import MainPage from "./pages/home-page-folder/MainPage.tsx";
 import ErrorPage from "./pages/error-page-folder/ErrorPage.tsx";
 import StockPage from "./pages/stock-page-folder/StockPage.tsx";
-import LandingPage from "./pages/landing-page-folder/LandingPage.tsx";
+import LoginPage from "./pages/login-page-folder/LoginPage.tsx";
+import SignupPage from "./pages/signup-page-folder/SignupPage";
 
 const router = createBrowserRouter([
   {
@@ -20,8 +21,12 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <LandingPage />
-      }, 
+        element: <LoginPage />
+      },
+      {
+        path: '/SignupPage',
+        element: <SignupPage />
+      },  
       {
         path: '/MainPage',
         element: <MainPage />

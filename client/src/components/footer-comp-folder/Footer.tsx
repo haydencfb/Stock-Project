@@ -19,16 +19,9 @@ export default function Footer() {
   const [value, setValue] = React.useState(0);
 
   return (
-    <footer style={{ backgroundColor: "black", color: "white" }}>
-    <Box sx={{ height: "50px", width: '100%', backgroundColor: "gray", marginTop: "auto" }}>
-      <BottomNavigation
-        sx={{ height: "50px", width: '100%' }}
-        showLabels
-        value={value}
-        onChange={(event, newValue) => {
-          setValue(newValue);
-        }}
-      >
+    <footer>
+    <Box sx={{ height: "50px", width: '100%', marginTop: "auto" }}>
+      <BottomNavigation sx={{ height: "50px", width: '100%', backgroundColor: 'var(--primary-grey)' }} showLabels value={value} onChange={(event, newValue) => {setValue(newValue)}}>
         <BottomNavigationAction label="Repository" icon={<GitHubIcon />} />
         <BottomNavigationAction label="Powerpoint" icon={<SlideshowIcon />} /> 
       </BottomNavigation>
