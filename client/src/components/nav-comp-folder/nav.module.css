@@ -1,6 +1,6 @@
-/* .button:hover {
-    color: red;
-} */
+.button:hover {
+    color: var(--primary-green);
+}
 
 .currency {
     background-color: hsla(108, 100%, 50%, 0.5);

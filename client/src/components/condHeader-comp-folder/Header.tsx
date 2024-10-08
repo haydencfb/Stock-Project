@@ -19,7 +19,7 @@ const Header = () => {
                     sx={{
                         fontSize: 'clamp(1.75rem, 2.5vw, 3.5rem)',
                         margin: '15px',
-                        color: 'black',
+                        color: 'var(--primary-white)',
                     }}
                     >
                         Stock Tracker

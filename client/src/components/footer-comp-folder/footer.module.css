@@ -1,4 +1,16 @@
 .footerBox {
     background-color: var(--primary-grey);
     width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.footerLink {
+    color: var(--primary-black);
+    display: flex;
+    align-items: center;
+}
+
+.footerLink:hover {
+    color: var(--primary-green);
 }
