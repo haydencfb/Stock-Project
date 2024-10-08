@@ -1,4 +1,6 @@
 // React Hook Imports
+import { Link } from 'react-router-dom';
+import SignUpCard from '../signup-com-folder/SignUp';
 
 // MUI Material Imports
 import Button from "@mui/material/Button";
@@ -34,16 +36,16 @@ const LoginCard = () => {
                         <Grid container spacing={2}>
 
                             <Grid size={12} display='flex' justifyContent='center'>
-                                <TextField fullWidth label="Username" style={{ width: 500 }}></TextField>
+                                <TextField fullWidth label="Username" style={{ maxWidth: 500 }}></TextField>
                             </Grid>
 
                             <Grid size={12} display='flex' justifyContent='center'>
-                                <TextField fullWidth label="Password" style={{ width: 500 }}></TextField>
+                                <TextField fullWidth label="Password" style={{ maxWidth: 500 }}></TextField>
                             </Grid>
 
                             <Grid size={12} display='flex' justifyContent='center' alignItems='center'>
                                 <Typography>Have you signed up yet?</Typography>
-                                <Button color="primary">Sign Up Now!</Button>
+                                <Link to="/SignupPage" relative='path' style={{ textDecoration: 'none', paddingLeft: '5px', color: 'var(--primary-green)' }}>Sign Up Now!</Link>
                             </Grid>
 
                             <Grid size={12} display='flex' justifyContent='center' alignItems='center'>
