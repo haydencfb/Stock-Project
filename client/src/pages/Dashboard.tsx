@@ -1,4 +1,4 @@
-import Dashboard from "../components/Dashboard";
+// import Dashboard from "../components/Dashboard";
 import Footer from "../components/footer-comp-folder/Footer";
 
 const Dashboard = () => {

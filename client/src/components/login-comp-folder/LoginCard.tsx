@@ -1,6 +1,5 @@
 // React Hook Imports
 import { Link } from 'react-router-dom';
-import SignUpCard from '../signup-com-folder/SignUp';
 import { useState, type FormEvent, type ChangeEvent } from 'react';
 
 import Auth from '../../utils/auth';
@@ -9,7 +8,6 @@ import type { UserLogin } from '../../interfaces/UserLogin';
 
 // MUI Material Imports
 import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
 import Grid from "@mui/material/Grid2";
 import Box from "@mui/material/Box";
 import Typography from '@mui/material/Typography';
@@ -70,30 +68,34 @@ const LoginCard = () => {
 
                                 <Grid size={12} display='flex' justifyContent='center'>
                                     <input
-                                        className='form-input'
+                                        className={`${classes.inputField}`}
                                         type='text'
                                         name='username'
+                                        placeholder='Username'
                                         value={loginData.username || ''}
                                         onChange={handleChange}
                                     />
                                 </Grid>
 
                                 <Grid size={12} display='flex' justifyContent='center'>
+                                    {/* <label>Password</label> */}
                                     <input
-                                        className='form-input'
+                                        className={`${classes.inputField}`}
                                         type='password'
                                         name='password'
+                                        id='password'
+                                        placeholder='Password'
                                         value={loginData.password || ''}
                                         onChange={handleChange}
                                     />                                
                                 </Grid>
 
-                                <Grid size={12} display='flex' justifyContent='center' alignItems='center'>
+                                {/* <Grid size={12} display='flex' justifyContent='center' alignItems='center'>
                                     <Typography>Have you signed up yet?</Typography>
                                     <Link to="/SignupPage" relative='path' style={{ textDecoration: 'none', paddingLeft: '5px', color: 'var(--primary-green)' }}>Sign Up Now!</Link>
-                                </Grid>
+                                </Grid> */}
 
-                                <Grid size={12} display='flex' justifyContent='center' alignItems='center'>
+                                <Grid size={12} display='flex' justifyContent='center' alignItems='center' sx={{ marginTop: '50px' }}>
                                     <Button type='submit' variant='contained' className={`${classes.loginButton}`}>Sign In</Button>
                                 </Grid>
 
