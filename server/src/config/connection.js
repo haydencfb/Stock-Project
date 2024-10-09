@@ -1,6 +1,6 @@
 import Seqeulize from "sequelize";
-import "dotenv/config";
-
+import dotenv from "dotenv";
+dotenv.config();
 
 const RAPIDAPI_KEY = process.env.REACT_APP_RAPIDAPI_KEY;
 
