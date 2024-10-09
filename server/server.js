@@ -54,7 +54,7 @@ app.get("/api/stock/:symbol", async (req, res) => {
     });
 
     console.log(startTimes);
-    console.log(closeValues);
+    console.log(closeValues)
 
     res.json({
       labels: startTimes,
