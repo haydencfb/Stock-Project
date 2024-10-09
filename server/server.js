@@ -1,9 +1,10 @@
 import express from "express";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import sequelize from "./src/config/connection.js";
+import { sequelize } from "./src/models/index.js";
 import axios from "axios";
 import "dotenv/config";
+import routes from "./src/routes/index.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -14,6 +15,7 @@ const PORT = process.env.PORT || 3001;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("../client/dist"));
+app.use(routes);
 
 app.get("/api/stock/:symbol", async (req, res) => {
   const symbol = req.params.symbol;
@@ -73,7 +75,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 (async () => {
-  await sequelize.sync({ force: true }); // NOTE: Change to false when you have finalized your models
+  await sequelize.sync({ force: false }); // NOTE: Change to false when you have finalized your models
   app.listen(PORT, () =>
     console.log(`Server is running on port http://localhost:${PORT}`),
   );
