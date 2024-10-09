@@ -50,9 +50,9 @@ const StockCard = () => {
           <Card
             sx={{
               minWidth: 300,
-              height: "400px",
+            //   height: "400px",
               margin: "15px",
-              backgroundColor: "var(--primary-grey)",
+            //   backgroundColor: "var(--primary-grey)",
             }}
           >
             <CardContent
