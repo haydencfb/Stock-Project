@@ -1,10 +1,10 @@
 {
   "name": "2024-09-p2-starter",
-  "type": "module",
-  "private": true,
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
+  "module": "true",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run client:build && npm run server",
@@ -20,12 +20,12 @@
     "prepare": "husky"
   },
   "lint-staged": {
-    "client/src/**/*.{ts,jsx}": [
-      "cd client && eslint --fix",
+    "client/src/**/*.{ts,jsx,json}": [
+      "cd client && npx eslint --fix",
       "prettier --write"
     ],
-    "server/**/*.{js,jsx}": [
-      "cd server && eslint --fix",
+    "server/**/*.{js,jsx,json}": [
+      "cd server && npx eslint --fix",
       "prettier --write"
     ],
     "**/*": "prettier --write --ignore-unknown"
@@ -43,9 +43,5 @@
     "nodemon": "^3.1.7",
     "prettier": "3.3.3",
     "wait-on": "^8.0.1"
-  },
-  "dependencies": {
-    "@mui/x-charts": "^7.18.0",
-    "chart.js": "^4.4.4"
   }
 }

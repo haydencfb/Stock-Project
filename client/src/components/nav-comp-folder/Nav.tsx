@@ -46,12 +46,10 @@ const currencies = [
 
 const Nav = () => {
 
-    // const [users, setUsers] = useState<UserData[]>([]);
     const [loginCheck, setLoginCheck] = useState(false);
 
     useEffect(() => {
         if (loginCheck) {
-            // fetchUsers();
         }
     }, [loginCheck]);
 
@@ -64,15 +62,6 @@ const Nav = () => {
             setLoginCheck(true);
         }
     };
-
-    // const fetchUsers = async () => {
-    //     try {
-    //         const data = await retrieveUsers();
-    //         setUsers(data)
-    //     } catch (err) {
-    //         console.error('Failed to retrieve tickets:', err);
-    //     }
-    // }
 
     const isMobile = useMediaQuery(`(max-width: 426px)`)
     const isTablet = useMediaQuery(`(max-width: 768px)`)
@@ -112,6 +101,12 @@ const Nav = () => {
     const handleClose = () => {
         setAnchorEl(null);
     };
+
+    const logOut = () => {
+        auth.logout();
+        setLoginCheck(false);
+        handleClose();
+    }
 
     return (
         <> 
@@ -156,13 +151,13 @@ const Nav = () => {
                         >
                             {!loginCheck ? (
                                 <>
-                                    <MenuItem onClick={handleClose}></MenuItem>
+                                    <MenuItem onClick={handleClose}>You arent loged in!</MenuItem>
                                 </>
                             ) : (
                                 <>
-                                    <MenuItem onClick={handleClose}>Log Out</MenuItem>
-                                </>                            )}
-                            {/* <MenuItem onClick={handleClose}>Log Out</MenuItem> */}
+                                    <MenuItem onClick={() => logOut()}>Log Out</MenuItem>
+                                </>                            
+                            )}
 
                             <Divider />
 
@@ -229,8 +224,15 @@ const Nav = () => {
                             'aria-labelledby': 'basic-button',
                             }}
                         >
-
-                            <MenuItem onClick={handleClose}>Log Out</MenuItem>
+                            {!loginCheck ? (
+                                <>
+                                    <MenuItem onClick={handleClose}>You arent loged in!</MenuItem>
+                                </>
+                            ) : (
+                                <>
+                                    <MenuItem onClick={() => logOut()}>Log Out</MenuItem>
+                                </>                            
+                            )}
 
                             <Divider />
 
@@ -298,7 +300,15 @@ const Nav = () => {
                             'aria-labelledby': 'basic-button',
                             }}
                         >
-                            <MenuItem onClick={handleClose}>Logout</MenuItem>
+                            {!loginCheck ? (
+                                <>
+                                    <MenuItem onClick={handleClose}>You arent loged in!</MenuItem>
+                                </>
+                            ) : (
+                                <>
+                                    <MenuItem onClick={() => logOut()}>Log Out</MenuItem>
+                                </>                            
+                            )}
                         </Menu>
 
                     </Grid>
