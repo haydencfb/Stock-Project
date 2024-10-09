@@ -23,7 +23,7 @@ const SearchBar = () => {
     try {
       const response = await fetch(`http://localhost:3000/api/stock/${symbol}`);
       const stockData = await response.json();
-      const stockPrice = stockData.price.regularMarketPrice.raw;
+    //   const stockPrice = stockData.price.regularMarketPrice.raw;
 
       console.log(stockData);
 
