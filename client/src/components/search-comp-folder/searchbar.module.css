@@ -1,0 +1,24 @@
+.searchInput {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchText {
+  border: 1px solid var(--primary-black);
+  border-radius: 5px;
+  width: 75%;
+  height: 50px;
+  margin: 25px;
+  padding: 5px;
+}
+
+.searchButton {
+  width: 25%;
+  height: 50px;
+  margin: 25px;
+}
+
+.searchButton:hover {
+  background-color: var(--primary-green);
+}

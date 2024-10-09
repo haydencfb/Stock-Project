@@ -1,27 +1,29 @@
 .loginDiv {
-    display: flex;
-    justify-content: center;
-    height: 500px;
+  display: flex;
+  justify-content: center;
+  height: 500px;
 }
 
 .loginBox {
-    /* Flex Styles */
-    display: flex;
-    justify-content: center;
+  /* Flex Styles */
+  display: flex;
+  justify-content: center;
 
-    /* Box Styles */
-    padding: 50px;
-    margin: 25px;
-    background-color: var(--primary-grey);
-    border-radius: 35px;
-    filter: drop-shadow(0px 5px 5px var(--primary-grey));
+  /* Box Styles */
+  padding: 50px;
+  margin: 25px;
+  background-color: var(--primary-grey);
+  border-radius: 35px;
+  filter: drop-shadow(0px 5px 5px var(--primary-grey));
 }
 
 .inputField {
-    background-color: var(--primary-grey);
-    width: 500px;
-    margin: 25px;
-    padding: 15px;
+  background-color: var(--primary-white);
+  border-radius: 5px;
+  border: 1px solid var(--primary-black);
+  width: 500px;
+  margin: 25px;
+  padding: 15px;
 }
 
 /* .inputField:active {
@@ -29,5 +31,5 @@
 } */
 
 .loginButton:hover {
-    background-color: var(--primary-green);
+  background-color: var(--primary-green);
 }
