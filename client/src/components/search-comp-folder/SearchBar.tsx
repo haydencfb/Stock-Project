@@ -22,6 +22,7 @@ const SearchBar = () => {
 
     try {
       const response = await fetch(`http://localhost:3000/api/stock/${symbol}`);
+      console.log(response)
       const stockData = await response.json();
     //   const stockPrice = stockData.price.regularMarketPrice.raw;
 
@@ -38,24 +39,24 @@ const SearchBar = () => {
       const newChart = new Chart(ctx!, {
         type: "line",
         data: {
-          labels: ["Price"],
+          labels: stockData.labels,
           datasets: [
             {
               label: `${symbol} Stock Price`,
-              data: [stockPrice],
+              data: stockData.values,
               backgroundColor: "rgba(75, 192, 192, 0.2)",
               borderColor: "rgba(75, 192, 192, 1)",
               borderWidth: 1,
             },
           ],
         },
-        options: {
-          scales: {
-            y: {
-              beginAtZero: true,
-            },
-          },
-        },
+        // options: {
+        //   scales: {
+        //     y: {
+        //       beginAtZero: true,
+        //     },
+        //   },
+        // },
       });
 
       setChart(newChart);

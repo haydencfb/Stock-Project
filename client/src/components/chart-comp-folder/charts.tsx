@@ -12,7 +12,7 @@ const Charts: React.FC = () => {
     try {
       const response = await fetch(`http://localhost:3000/api/stock/${symbol}`);
       const stockData = await response.json();
-      const stockPrice = stockData.price.regularMarketPrice.raw;
+      // const stockPrice = stockData.price.regularMarketPrice.raw;
 
       console.log(stockData);
 
@@ -27,11 +27,11 @@ const Charts: React.FC = () => {
       const newChart = new Chart(ctx!, {
         type: "line",
         data: {
-          labels: ["Price"],
+          labels: [stockData.labels],
           datasets: [
             {
               label: `${symbol} Stock Price`,
-              data: [stockPrice],
+              data: [stockData.prices],
               backgroundColor: "rgba(75, 192, 192, 0.2)",
               borderColor: "rgba(75, 192, 192, 1)",
               borderWidth: 1,
