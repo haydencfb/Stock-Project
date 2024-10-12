@@ -1,6 +1,9 @@
-// React Hook Imports
+// Import React Hooks
 
-// MUI Material Imports
+// Import CSS Hooks
+import classes from "./stockcard.module.css";
+
+// Import MUI Material Hooks
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -9,11 +12,8 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid2";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
-// Components
+// Import Component Hooks
 import Charts from "../chart-comp-folder/charts";
-
-// CSS Imports
-import classes from "./stockcard.module.css";
 
 const StockCard = () => {
   const stockCardTheme = createTheme({
@@ -52,6 +52,10 @@ const StockCard = () => {
               minWidth: 300,
               margin: "15px",
               backgroundColor: "var(--primary-grey)",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
             }}
           >
             <CardContent
@@ -73,9 +77,9 @@ const StockCard = () => {
                 alignItems: "center",
               }}
             >
-              <Button className={`${classes.cardActions}`} size="small">
+              {/* <Button className={`${classes.cardActions}`} size="small">
                 Learn More
-              </Button>
+              </Button> */}
             </CardActions>
           </Card>
         </Grid>

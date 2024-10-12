@@ -1,17 +1,23 @@
-// React Hook Imports
-// import * as React from 'react';
+// Import React Hooks
 import React, { useState } from "react";
-import { Chart } from "chart.js/auto";
 
-// MUI Material Imports
+// Import CSS Hooks
+import classes from "./searchbar.module.css";
+
+// Import MUI Material Hooks
 import Box from "@mui/material/Box";
 import { Button } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import Auth from "../../utils/auth";
 
-// CSS Imports
-import classes from "./searchbar.module.css";
+// Import MUI Icon Hooks
+// NA
+
+// Import ChartJS Hooks
+import { Chart } from "chart.js/auto";
+
+// Import Component Hooks
+import Auth from "../../utils/auth";
 
 const SearchBar = () => {
   const [symbol, setSymbol] = useState("");
@@ -84,11 +90,8 @@ const SearchBar = () => {
         },
       });
 
-      // window.addEventListener('beforeprint', () => {
-      //     newChart.resize(100, 100);
-      // });
-      // window.addEventListener('afterprint', () => {
-      //     newChart.resize();
+      // window.addEventListener('resize', () => {
+      //   newChart.resize();
       // });
 
       setChart(newChart);
