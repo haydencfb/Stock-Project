@@ -1,27 +1,36 @@
-// React Hook Imports
+// Import React Hooks
+// NA
 
-// React Component Imports
-import LoginCard from "../../components/login-comp-folder/LoginCard";
+// Import CSS Hooks
+// NA
 
-// MUI Material Imports
+// Import MUI Material Hooks
 import Box from "@mui/material/Box";
 
-// CSS Imports
+// Import MUI Icon Hooks
+// NA
+
+// Import ChartJS Hooks
+// NA
+
+// Import Component Hooks
+import LoginCard from "../../components/login-comp-folder/LoginCard";
 
 const LandingPage = () => {
-    return (
-        <>
-            <Box
-                sx={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    height: "100vh",
-                }}>
-                    <LoginCard />
-            </Box>
-        </>
-    )
-}
+  return (
+    <>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+        }}
+      >
+        <LoginCard />
+      </Box>
+    </>
+  );
+};
 
 export default LandingPage;
