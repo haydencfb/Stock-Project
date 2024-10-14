@@ -14,7 +14,7 @@ import Box from "@mui/material/Box";
 // NA
 
 // Import Component Hooks
-import LoginCard from "../../components/login-comp-folder/LoginCard";
+// import LoginCard from "../../components/login-comp-folder/LoginCard";
 import SignUpCard from "../../components/signup-com-folder/SignUp";
 
 const SignupPage = () => {

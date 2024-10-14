@@ -26,8 +26,8 @@ import ShowChartIcon from "@mui/icons-material/ShowChart";
 // NA
 
 // Import Component Hooks
-import { retrieveUsers } from "../../api/userAPI";
-import type { UserData } from "../../interfaces/UserData";
+// import { retrieveUsers } from "../../api/userAPI";
+// import type { UserData } from "../../interfaces/UserData";
 import auth from "../../utils/auth";
 
 const currencies = [

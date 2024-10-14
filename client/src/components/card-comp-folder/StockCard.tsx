@@ -1,19 +1,19 @@
 // Import React Hooks
 
 // Import CSS Hooks
-import classes from "./stockcard.module.css";
+// import classes from "./stockcard.module.css";
 
 // Import MUI Material Hooks
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
+// import Button from "@mui/material/Button";
+// import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid2";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 // Import Component Hooks
-import Charts from "../chart-comp-folder/charts";
+// import Charts from "../chart-comp-folder/charts";
 
 const StockCard = () => {
   const stockCardTheme = createTheme({
@@ -66,7 +66,9 @@ const StockCard = () => {
                 alignItems: "center",
               }}
             >
-              <Charts />
+              <div>
+                <canvas id="stockChart" width="500px" height="400px"></canvas>
+              </div>
             </CardContent>
 
             <CardActions
