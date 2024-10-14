@@ -2,12 +2,12 @@
 import React, { useState } from "react";
 
 // Import CSS Hooks
-import classes from "./charts.module.css";
+// import classes from "./charts.module.css";
 
 // Import MUI Material Hooks
-import { Typography } from "@mui/material";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+// import { Typography } from "@mui/material";
+// import useMediaQuery from "@mui/material/useMediaQuery";
+// import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 // Import MUI Icon Hooks
 // NA
@@ -117,6 +117,15 @@ const Charts: React.FC = () => {
           </>
         )}
       </ThemeProvider> */}
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          value={symbol}
+          onChange={(e) => setSymbol(e.target.value)}
+          placeholder="Enter stock symbol"
+        />
+        <button type="submit">Submit</button>
+      </form>
       <div>
         <canvas id="stockChart" width="500px" height="400px"></canvas>
       </div>
