@@ -4,6 +4,7 @@ import Nav from "./components/nav-comp-folder/Nav";
 import Footer from "./components/footer-comp-folder/Footer";
 import { useLocation } from 'react-router-dom';
 import Header from "./components/condHeader-comp-folder/Header";
+// require('dotenv').config()
 
 function App() {
   const location = useLocation();

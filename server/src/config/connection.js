@@ -6,7 +6,9 @@ const RAPIDAPI_KEY = process.env.REACT_APP_RAPIDAPI_KEY;
 
 const sequelize =
   process.env.NODE_ENV === "production"
-    ? new Seqeulize(process.env.DATABASE_URL)
+    ? new Seqeulize(process.env.DB_URL, {
+      dialect: "postgres",
+    })
     : new Seqeulize(
         process.env.DB_NAME,
         process.env.DB_USER,
