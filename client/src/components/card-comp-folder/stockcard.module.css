@@ -1,3 +1,12 @@
 .cardActions:hover {
     color: var(--primary-green);
 }
+
+.chartContainer {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin: auto;
+    height: 80vh;
+    width: 80vw;
+}
