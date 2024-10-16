@@ -50,6 +50,7 @@ const SearchBar = () => {
         type: "line",
         options: {
           responsive: true,
+          maintainAspectRatio: true,
           plugins: {
             legend: {
               labels: {

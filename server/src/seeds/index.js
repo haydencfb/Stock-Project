@@ -16,4 +16,4 @@ const seedAll = async () => {
   }
 };
 
-seedAll();
+export { seedAll };

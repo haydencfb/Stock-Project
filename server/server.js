@@ -5,6 +5,7 @@ import { sequelize } from "./src/models/index.js";
 import axios from "axios";
 import "dotenv/config";
 import routes from "./src/routes/index.js";
+import { seedAll } from "./src/seeds/index.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -23,6 +24,8 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.join(__dirname, "../client/dist/index.html"));
   });
 }
+
+await seedAll();
 
 (async () => {
   await sequelize.sync({ force: false }); // NOTE: Change to false when you have finalized your models

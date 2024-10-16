@@ -1,7 +1,7 @@
 // Import React Hooks
 
 // Import CSS Hooks
-// import classes from "./stockcard.module.css";
+import classes from "./stockcard.module.css";
 
 // Import MUI Material Hooks
 import Card from "@mui/material/Card";
@@ -66,7 +66,7 @@ const StockCard = () => {
                 alignItems: "center",
               }}
             >
-              <div>
+              <div className={`${classes.chartContainer}`}>
                 <canvas id="stockChart" width="500px" height="400px"></canvas>
               </div>
             </CardContent>
