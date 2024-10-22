@@ -32,9 +32,10 @@ npm run start:dev
 ## Screenshot
 
 ![Screenshoit](./assets/sample.png)
-## Demo
+## Login
 
-TBA
+Username: HaydenFB
+Password: password
 
 ## Contributors
 
