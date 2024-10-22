@@ -4,7 +4,7 @@ import axios from "axios";
 const router = express.Router();
 
 router.get("/:symbol", async (req, res) => {
-  const symbol = req.params.symbol;
+  // const symbol = req.params.symbol;
 
   console.log(process.env.RAPIDAPI_HOST);
 

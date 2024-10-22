@@ -7,12 +7,12 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 3000;
 
-const API_URL = "https://yahoo-finance-api.p.rapidapi.com/";
+const API_URL = "https://apidojo-yahoo-finance-v1.p.rapidapi.com/";
 const API_KEY = process.env.REACT_APP_RAPIDAPI_KEY;
 
 const options = {
   headers: {
-    "X-RapidAPI-Host": "yahoo-finance-api.p.rapidapi.com",
+    "X-RapidAPI-Host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
     "X-RapidAPI-Key": API_KEY,
   },
 };
