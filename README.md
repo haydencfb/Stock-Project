@@ -32,6 +32,11 @@ npm run start:dev
 ## Screenshot
 
 ![Screenshoit](./assets/sample.png)
+
+## Link To Deployment:
+
+https://stock-project-mo4x.onrender.com
+
 ## Login
 
 Username: HaydenFB
